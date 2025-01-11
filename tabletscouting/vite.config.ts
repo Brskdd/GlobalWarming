@@ -12,4 +12,7 @@ export default defineConfig({
     },
   },
   assetsInclude: ['assets/**/*'],
+  server: {
+    host: '0.0.0.0', // Add this line
+  },
 });
