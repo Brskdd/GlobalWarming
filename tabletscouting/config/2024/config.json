@@ -1,10 +1,64 @@
 {
-  "$schema": "https://frc2713.github.io/QRScout/schema.json",
-  "title": "QRScout",
-  "page_title": "Reefscape",
-  "teamNumber": 2713,
-  "delimiter": "\t",
-  "sections": [
+    "$schema": "https://frc2713.github.io/QRScout/schema.json",
+    "title": "QRScout",
+    "page_title": "Reefscape",
+    "delimiter": "\t",
+    "teamNumber": 2713,
+    "theme": {
+        "light": {
+            "background": "0 0% 100%",
+            "foreground": "0 0% 3.9%",
+            "card": "0 0% 100%",
+            "card_foreground": "0 0% 3.9%",
+            "popover": "0 0% 100%",
+            "popover_foreground": "0 0% 3.9%",
+            "primary": "354.44 71.3% 47.9%",
+            "primary_foreground": "0 85.7% 97.3%",
+            "secondary": "0 0% 96.1%",
+            "secondary_foreground": "0 0% 9%",
+            "muted": "0 0% 96.1%",
+            "muted_foreground": "0 0% 45.1%",
+            "accent": "0 0% 96.1%",
+            "accent_foreground": "0 0% 9%",
+            "destructive": "0 84.2% 60.2%",
+            "destructive_foreground": "0 0% 98%",
+            "border": "0 0% 89.8%",
+            "input": "0 0% 89.8%",
+            "ring": "354.44 71.3% 47.9%",
+            "chart_1": "12 76% 61%",
+            "chart_2": "173 58% 39%",
+            "chart_3": "197 37% 24%",
+            "chart_4": "43 74% 66%",
+            "chart_5": "27 87% 67%"
+        },
+        "dark": {
+            "background": "0 0% 3.9%",
+            "foreground": "0 0% 98%",
+            "card": "0 0% 3.9%",
+            "card_foreground": "0 0% 98%",
+            "popover": "0 0% 3.9%",
+            "popover_foreground": "0 0% 98%",
+            "primary": "354.44 71.3% 47.9%",
+            "primary_foreground": "0 85.7% 97.3%",
+            "secondary": "0 0% 14.9%",
+            "secondary_foreground": "0 0% 98%",
+            "muted": "0 0% 14.9%",
+            "muted_foreground": "0 0% 63.9%",
+            "accent": "0 0% 14.9%",
+            "accent_foreground": "0 0% 98%",
+            "destructive": "0 62.8% 30.6%",
+            "destructive_foreground": "0 0% 98%",
+            "border": "0 0% 14.9%",
+            "input": "0 0% 14.9%",
+            "ring": "354.44 71.3% 47.9%",
+            "chart_1": "220 70% 50%",
+            "chart_2": "160 60% 45%",
+            "chart_3": "30 80% 55%",
+            "chart_4": "280 65% 60%",
+            "chart_5": "340 75% 55%"
+        }
+    },
+    "sections": [
         {
             "name": "Pregame",
             "fields": [
@@ -14,6 +68,7 @@
                     "type": "number",
                     "required": true,
                     "code": "teamNumber",
+                    "defaultValue": 0,
                     "min": 0,
                     "max": 19999
                 },
@@ -31,6 +86,7 @@
                     "type": "select",
                     "required": true,
                     "code": "color",
+                    "defaultValue": "",
                     "choices": {
                         "Red": "Red",
                         "Blue": "Blue"
@@ -42,6 +98,7 @@
                     "type": "select",
                     "required": true,
                     "code": "startPos",
+                    "defaultValue": "",
                     "choices": {
                         "Left": "Left",
                         "Center": "Center",
@@ -57,9 +114,9 @@
                     "title": "Cross Start Line",
                     "description": "Check if the robot crossed the start line during autonomous.",
                     "type": "boolean",
-                    "defaultValue": false,
                     "required": false,
-                    "code": "crossStartLine"
+                    "code": "crossStartLine",
+                    "defaultValue": false
                 },
                 {
                     "title": "Algae Picked",
@@ -81,37 +138,22 @@
                     "title": "Coop Attempt",
                     "description": "Check if a cooperation attempt was made.",
                     "type": "boolean",
-                    "defaultValue": false,
                     "required": false,
-                    "code": "autonCoopAttempt"
+                    "code": "autonCoopAttempt",
+                    "defaultValue": false
                 }
             ]
         },
         {
-            "name": "Teleop",
+            "name": "Teleop Cones",
             "fields": [
                 {
-                    "title": "Algae Shots",
-                    "description": "The number of algae shots scored.",
-                    "type": "number",
-                    "required": false,
-                    "code": "teleopAlgaeShots",
-                    "defaultValue": 0
-                },
-                {
-                    "title": "Algae Misses",
-                    "description": "The number of algae shots missed.",
-                    "type": "number",
-                    "required": false,
-                    "code": "teleopAlgaeMisses",
-                    "defaultValue": 0
-                },
-                {
-                    "title": "Coral Collection",
-                    "description": "How coral was collected.",
+                    "title": "Cone Collection",
+                    "description": "How cones were collected.",
                     "type": "select",
                     "required": false,
-                    "code": "coralCollection",
+                    "code": "coneCollection",
+                    "defaultValue": "",
                     "choices": {
                         "Ground": "Ground",
                         "Station": "Station",
@@ -120,65 +162,116 @@
                     }
                 },
                 {
-                    "title": "Bottom Coral",
-                    "description": "The number of coral pieces scored in the bottom area.",
+                    "title": "Bottom Cones",
+                    "description": "The number of cones scored in the bottom area.",
                     "type": "number",
                     "required": false,
-                    "code": "bottomCoral",
+                    "code": "bottomCones",
                     "defaultValue": 0
                 },
                 {
-                    "title": "Low Coral",
-                    "description": "The number of coral pieces scored in the low area.",
+                    "title": "Low Cones",
+                    "description": "The number of cones scored in the low area.",
                     "type": "number",
                     "required": false,
-                    "code": "lowCoral",
+                    "code": "lowCones",
                     "defaultValue": 0
                 },
                 {
-                    "title": "Medium Coral",
-                    "description": "The number of coral pieces scored in the medium area.",
+                    "title": "Medium Cones",
+                    "description": "The number of cones scored in the medium area.",
                     "type": "number",
                     "required": false,
-                    "code": "mediumCoral",
+                    "code": "mediumCones",
                     "defaultValue": 0
                 },
                 {
-                    "title": "High Coral",
-                    "description": "The number of coral pieces scored in the high area.",
+                    "title": "High Cones",
+                    "description": "The number of cones scored in the high area.",
                     "type": "number",
                     "required": false,
-                    "code": "highCoral",
+                    "code": "highCones",
                     "defaultValue": 0
                 },
                 {
-                    "title": "Coral Missed",
-                    "description": "The number of coral shots missed.",
+                    "title": "Cone Missed",
+                    "description": "The number of cone shots missed.",
                     "type": "number",
                     "required": false,
-                    "code": "coralMissed",
+                    "code": "coneMissed",
                     "defaultValue": 0
-                },
-                {
-                    "title": "Coop Attempt",
-                    "description": "Check if a cooperation attempt was made.",
-                    "type": "boolean",
-                    "defaultValue": false,
-                    "required": false,
-                    "code": "teleopCoopAttempt"
                 }
             ]
         },
         {
-            "name": "Endgame",
+            "name": "Teleop Cubes",
+            "fields": [
+                {
+                    "title": "Cube Collection",
+                    "description": "How cubes were collected.",
+                    "type": "select",
+                    "required": false,
+                    "code": "cubeCollection",
+                    "defaultValue": "",
+                    "choices": {
+                        "Ground": "Ground",
+                        "Station": "Station",
+                        "Both": "Both",
+                        "None": "None"
+                    }
+                },
+                {
+                    "title": "Bottom Cubes",
+                    "description": "The number of cubes scored in the bottom area.",
+                    "type": "number",
+                    "required": false,
+                    "code": "bottomCubes",
+                    "defaultValue": 0
+                },
+                {
+                    "title": "Low Cubes",
+                    "description": "The number of cubes scored in the low area.",
+                    "type": "number",
+                    "required": false,
+                    "code": "lowCubes",
+                    "defaultValue": 0
+                },
+                {
+                    "title": "Medium Cubes",
+                    "description": "The number of cubes scored in the medium area.",
+                    "type": "number",
+                    "required": false,
+                    "code": "mediumCubes",
+                    "defaultValue": 0
+                },
+                {
+                    "title": "High Cubes",
+                    "description": "The number of cubes scored in the high area.",
+                    "type": "number",
+                    "required": false,
+                    "code": "highCubes",
+                    "defaultValue": 0
+                },
+                {
+                    "title": "Cube Missed",
+                    "description": "The number of cube shots missed.",
+                    "type": "number",
+                    "required": false,
+                    "code": "cubeMissed",
+                    "defaultValue": 0
+                }
+            ]
+        },
+        {
+            "name": "Endgame & Postgame",
             "fields": [
                 {
                     "title": "Barge Attempt",
                     "description": "Check if a barge attempt was made.",
                     "type": "boolean",
-                    "defaultValue": false,
                     "required": false,
-                    "code": "bargeAttempt"
+                    "code": "bargeAttempt",
+                    "defaultValue": false
                 },
                 {
                     "title": "Endgame Position",
@@ -186,25 +279,21 @@
                     "type": "select",
                     "required": true,
                     "code": "endgamePosition",
+                    "defaultValue": "",
                     "choices": {
                         "None": "None",
                         "Parked": "Parked",
                         "Shallow": "Shallow",
                         "Deep": "Deep"
                     }
-                }
-            ]
-        },
-        {
-            "name": "Postgame",
-            "fields": [
+                },
                 {
                     "title": "Defended Against",
                     "description": "Check if the robot was defended against.",
                     "type": "boolean",
-                    "defaultValue": false,
                     "required": false,
-                    "code": "defendedAgainst"
+                    "code": "defendedAgainst",
+                    "defaultValue": false
                 },
                 {
                     "title": "Defense Time",
@@ -220,6 +309,7 @@
                     "type": "select",
                     "required": false,
                     "code": "playstyle",
+                    "defaultValue": "",
                     "choices": {
                         "Coral": "Coral",
                         "Algae": "Algae"
@@ -231,6 +321,7 @@
                     "type": "text",
                     "required": false,
                     "code": "notes",
+                    "defaultValue": "",
                     "min": 0,
                     "max": 200
                 }
