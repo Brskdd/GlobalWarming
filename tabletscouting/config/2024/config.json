@@ -145,14 +145,14 @@
             ]
         },
         {
-            "name": "Teleop Cones",
+            "name": "Teleop Algae",
             "fields": [
                 {
-                    "title": "Cone Collection",
-                    "description": "How cones were collected.",
+                    "title": "Algae Collection",
+                    "description": "How Algae were collected.",
                     "type": "select",
                     "required": false,
-                    "code": "coneCollection",
+                    "code": "AlgaeCollection",
                     "defaultValue": "",
                     "choices": {
                         "Ground": "Ground",
@@ -162,56 +162,56 @@
                     }
                 },
                 {
-                    "title": "Bottom Cones",
-                    "description": "The number of cones scored in the bottom area.",
+                    "title": "Bottom Algae",
+                    "description": "The number of Algae scored in the bottom area.",
                     "type": "number",
                     "required": false,
-                    "code": "bottomCones",
+                    "code": "bottomAlgae",
                     "defaultValue": 0
                 },
                 {
-                    "title": "Low Cones",
-                    "description": "The number of cones scored in the low area.",
+                    "title": "Low Algae",
+                    "description": "The number of Algae scored in the low area.",
                     "type": "number",
                     "required": false,
-                    "code": "lowCones",
+                    "code": "lowAlgae",
                     "defaultValue": 0
                 },
                 {
-                    "title": "Medium Cones",
-                    "description": "The number of cones scored in the medium area.",
+                    "title": "Medium Algae",
+                    "description": "The number of Algae scored in the medium area.",
                     "type": "number",
                     "required": false,
-                    "code": "mediumCones",
+                    "code": "mediumAlgae",
                     "defaultValue": 0
                 },
                 {
-                    "title": "High Cones",
-                    "description": "The number of cones scored in the high area.",
+                    "title": "High Algae",
+                    "description": "The number of Algae scored in the high area.",
                     "type": "number",
                     "required": false,
-                    "code": "highCones",
+                    "code": "highAlgae",
                     "defaultValue": 0
                 },
                 {
-                    "title": "Cone Missed",
-                    "description": "The number of cone shots missed.",
+                    "title": "Algae Missed",
+                    "description": "The number of Algae shots missed.",
                     "type": "number",
                     "required": false,
-                    "code": "coneMissed",
+                    "code": "AlgaeMissed",
                     "defaultValue": 0
                 }
             ]
         },
         {
-            "name": "Teleop Cubes",
+            "name": "Teleop Coral",
             "fields": [
                 {
-                    "title": "Cube Collection",
-                    "description": "How cubes were collected.",
+                    "title": "Coral Collection",
+                    "description": "How Coral were collected.",
                     "type": "select",
                     "required": false,
-                    "code": "cubeCollection",
+                    "code": "CoralCollection",
                     "defaultValue": "",
                     "choices": {
                         "Ground": "Ground",
@@ -221,43 +221,43 @@
                     }
                 },
                 {
-                    "title": "Bottom Cubes",
-                    "description": "The number of cubes scored in the bottom area.",
+                    "title": "Bottom Coral",
+                    "description": "The number of Coral scored in the bottom area.",
                     "type": "number",
                     "required": false,
-                    "code": "bottomCubes",
+                    "code": "bottomCoral",
                     "defaultValue": 0
                 },
                 {
-                    "title": "Low Cubes",
-                    "description": "The number of cubes scored in the low area.",
+                    "title": "Low Coral",
+                    "description": "The number of Coral scored in the low area.",
                     "type": "number",
                     "required": false,
-                    "code": "lowCubes",
+                    "code": "lowCoral",
                     "defaultValue": 0
                 },
                 {
-                    "title": "Medium Cubes",
-                    "description": "The number of cubes scored in the medium area.",
+                    "title": "Medium Coral",
+                    "description": "The number of Coral scored in the medium area.",
                     "type": "number",
                     "required": false,
-                    "code": "mediumCubes",
+                    "code": "mediumCoral",
                     "defaultValue": 0
                 },
                 {
-                    "title": "High Cubes",
-                    "description": "The number of cubes scored in the high area.",
+                    "title": "High Coral",
+                    "description": "The number of Coral scored in the high area.",
                     "type": "number",
                     "required": false,
-                    "code": "highCubes",
+                    "code": "highCoral",
                     "defaultValue": 0
                 },
                 {
-                    "title": "Cube Missed",
-                    "description": "The number of cube shots missed.",
+                    "title": "Coral Missed",
+                    "description": "The number of Coral shots missed.",
                     "type": "number",
                     "required": false,
-                    "code": "cubeMissed",
+                    "code": "CoralMissed",
                     "defaultValue": 0
                 }
             ]
@@ -314,6 +314,14 @@
                         "Coral": "Coral",
                         "Algae": "Algae"
                     }
+                },
+                {
+                    "title": "Won Match",
+                    "description": "Check if the robot won the match",
+                    "type": "boolean",
+                    "required": false,
+                    "code": "wonMatch",
+                    "defaultValue": false
                 },
                 {
                     "title": "Notes",
