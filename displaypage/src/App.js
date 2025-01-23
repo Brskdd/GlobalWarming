@@ -12,8 +12,10 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-custom-gradient">
-      {showdisplay1 && <Display1 />}
+    <div className="min-h-screen flex flex-col bg-custom-gradient">
+      <div className="flex-1 flex">
+        {showdisplay1 && <Display1 />}
+      </div>
       <Menu toggledisplay1={toggledisplay1} />
     </div>
   );
